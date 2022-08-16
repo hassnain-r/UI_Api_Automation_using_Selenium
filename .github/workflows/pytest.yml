@@ -31,7 +31,7 @@ jobs:
         run: |
           pipenv install -r requirements.txt
       - name: Run test suite
-      - uses: nanasess/setup-chromedriver@v1
+        uses: nanasess/setup-chromedriver@v1
         run: |
 
           pipenv run pytest ./burq_ui/tests/
