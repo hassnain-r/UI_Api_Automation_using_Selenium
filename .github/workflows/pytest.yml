@@ -41,10 +41,10 @@ jobs:
           pipenv run  pytest ./burq_ui/tests/test_login_scenarios.py -k "test_login_with_valid_credentials"
 
       - name: create final report
-          uses: actions/upload-artifact@v2
-          with:
-            name: build
-            if-no-files-found: error
-            path: results
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          if-no-files-found: error
+          path: results
 
 
