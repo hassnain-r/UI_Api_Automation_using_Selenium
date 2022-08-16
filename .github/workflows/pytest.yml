@@ -38,4 +38,4 @@ jobs:
 
       - name: Run test suite
         run: |
-          pipenv run pytest ./burq_ui/tests/
+          pipenv run  pytest ./burq_ui/tests/test_login_scenarios.py -k "test_login_with_valid_credentials"

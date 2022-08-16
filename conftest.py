@@ -5,6 +5,7 @@ from selenium import webdriver
 from dotenv import load_dotenv, find_dotenv
 from datetime import datetime
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
 
 
 class SessionData:
@@ -39,7 +40,11 @@ def pytest_configure(config):
 @pytest.fixture(scope="class")
 def setup(request):
     load_dotenv(find_dotenv())
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
     driver.get(os.getenv("BASE_URL"))
     driver.maximize_window()
     request.cls.driver = driver
