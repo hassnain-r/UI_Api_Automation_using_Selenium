@@ -30,8 +30,11 @@ jobs:
         if: steps.cache-pipenv.outputs.cache-hit != 'true'
         run: |
           pipenv install -r requirements.txt
-      - name: Run test suite
+
+      - name: Install Chrome
         uses: nanasess/setup-chromedriver@v1
+
+      - name: Run test suite
         run: |
 
           pipenv run pytest ./burq_ui/tests/
