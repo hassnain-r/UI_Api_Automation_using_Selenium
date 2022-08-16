@@ -45,7 +45,6 @@ def setup(request):
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
-    logging.info(os.getenv("BASE_URL"))
     driver.get(os.getenv("BASE_URL"))
     driver.maximize_window()
     request.cls.driver = driver
