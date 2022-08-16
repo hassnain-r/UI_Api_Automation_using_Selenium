@@ -1,0 +1,13 @@
+allure-pytest==2.9.45
+allure-python-commons==2.9.45
+pytest==6.2.5
+pytest-html==3.1.1
+pytest-rerunfailures==10.2
+pytest-xdist==2.4.0
+PyYAML==6.0
+selenium==3.141.0
+requests
+bs4
+lxml
+python-dotenv
+webdriver-manager
