@@ -34,6 +34,8 @@ jobs:
       - name: Run test suite
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
+          USER_NAME: ${{ secrets.USER_NAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
 
         run: |
           pipenv run  pytest ./burq_ui/tests/test_login_scenarios.py -k "test_login_with_valid_credentials"
